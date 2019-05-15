@@ -38,5 +38,5 @@ $router->post('sign','Test\TestController@sign');
 $router->get('niu','Test\QqController@niu');
 
 $router->post('neet','Test\QqController@niu');
-
+//注册
 $router->post('reg','reg\RegController@reg');
