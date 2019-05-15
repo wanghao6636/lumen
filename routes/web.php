@@ -26,3 +26,17 @@ $router->post('/order/3','Users\LoginController@order');
 
 
 $router->post('/password','Users\UserController@info');
+
+//对称
+$router->post('test','Test\TestController@Test');
+//非对称
+$router->post('innt','Test\TestController@innt');
+//验签
+$router->post('sign','Test\TestController@sign');
+
+//ajax请求
+$router->get('niu','Test\QqController@niu');
+
+$router->post('neet','Test\QqController@niu');
+
+$router->post('reg','reg\RegController@reg');
