@@ -82,5 +82,7 @@ class RegController extends Controller
     }
     //登录
 
+    
+
 }
 ?>
