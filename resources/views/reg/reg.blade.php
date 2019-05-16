@@ -14,7 +14,7 @@
     <script>
         $('#qq').click(function(){
             $.ajax({
-                url:'http://www.lument.com/reg',
+                url:'http://www.lument.com/Reg',
                 dataType:'JSONP',
             })
         })
