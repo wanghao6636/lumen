@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\reg;
+namespace App\Http\Controllers\Reg;
 use App\Http\Controllers\Controller;
 use App\Model\RegModel;
 class RegController extends Controller
