@@ -42,4 +42,5 @@ $router->post('neet','Test\QqController@niu');
 
 
 //注册
-$router->get('Reg','Reg\RegController@Reg');
+$router->post('Reg','Reg\RegController@Reg');
+//登录

@@ -22,6 +22,7 @@ class RegController extends Controller
             ];
             return $data;
         }
+
         $info=RegModel::where(['name'=>$name])->first();
         if($info){
             $data=[
@@ -82,8 +83,6 @@ class RegController extends Controller
         return json_encode($data);
     }
     //登录
-
-    
 
 }
 ?>
