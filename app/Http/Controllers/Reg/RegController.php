@@ -7,7 +7,7 @@ class RegController extends Controller
     public function reg()
     {
         //账号
-        response.addHeader('add_header Access-Control-Allow-Origin *');
+        header('add_header Access-Control-Allow-Origin *');
         header('add_header Access-Control-Allow-Headers X-Requested-With,Content-Type');
         header('add_header Access-Control-Allow-Methods GET,POST,OPTIONS');
         $name=trim($_POST['name']);
