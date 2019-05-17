@@ -41,7 +41,7 @@ class RegController extends Controller
                 'msg'=>'密码不能为空'
             ];
             return $data;
-        }
+        };
         $pass2=$_POST['pass2'];
         if($pass!=$pass2){
             $data=[
