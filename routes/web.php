@@ -43,4 +43,5 @@ $router->post('neet','Test\QqController@niu');
 
 
 $router->post('reg','Reg\RegController@reg');
+$router->post('login','Reg\RegController@login');
 

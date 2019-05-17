@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Reg;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redis;
 use App\Model\RegModel;
 class RegController extends Controller
 {
@@ -85,6 +86,48 @@ class RegController extends Controller
         return json_encode($data);
     }
     //登录
-
+    public function login()
+    {
+        $name=$_POST['name'];
+        $pass=$_POST['pass'];
+        if(empty($name)){
+            $res_data=[
+                'errcode'=>'10001',
+                'msg'=>'姓名不能为空'
+            ];
+            return $res_data;
+        }
+        if(empty($pass)){
+            $res_data=[
+                'errcode'=>'10002',
+                'msg'=>'密码不能为空'
+            ];
+            return $res_data;
+        }
+        $data=[
+            'name'=>$name,
+            'pass'=>$pass
+        ];
+        $user_data=RegModel::where($data)->first();
+        $ktoken='token:u:'.$user_data['uid'];
+        $token=str_random(32);
+        Redis::hSet($ktoken,'app:token',$token);
+        Redis::expire($ktoken,3600*24*3);
+        if($user_data){
+            $response=[
+                'errcode'=>0,
+                'msg'=>'登陆成功',
+                'token'=>$token,
+                'uid'=>$user_data['uid'],
+                'email'=>$user_data['email'],
+            ];
+        }else{
+            $response=[
+                'errcode'=>'5011',
+                'msg'=>'账号或者密码错误'
+            ];
+        }
+        return json_encode($response);
+    }
 }
 ?>
