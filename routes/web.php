@@ -41,6 +41,7 @@ $router->post('neet','Test\QqController@niu');
 
 
 
-//注册
+
 $router->post('reg','Reg\RegController@reg');
-//登录
+
+//$router->post('reg','Reg\RegController@reg')->Middleware('RegMiddlware');
