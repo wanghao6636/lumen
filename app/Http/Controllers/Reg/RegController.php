@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Reg;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redis;
 use App\Model\RegModel;
+use App\Model\LisModel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 class RegController extends Controller
@@ -146,8 +147,15 @@ class RegController extends Controller
         header("Access-Control-Allow-Origin: *");
 //        $id=$request->input('id');
         //echo $id;
-
-
+    }
+    public function gglis(Request $request)
+    {
+        header("Access-Control-Allow-Origin: *");
+        $id=$_POST['id'];
+        echo $id;
+        $res=LisModel::where(['id'=>$id])->first();
+        //$res=DB::table('lis')->first();
+        echo json_encode($res,JSON_UNESCAPED_UNICODE);
     }
 }
 ?>
