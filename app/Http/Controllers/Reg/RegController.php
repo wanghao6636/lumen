@@ -3,8 +3,10 @@ namespace App\Http\Controllers\Reg;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redis;
 use App\Model\RegModel;
+use Illuminate\Support\Facades\DB;
 class RegController extends Controller
 {
+    //注册
     public function reg()
     {
         //账号
@@ -128,6 +130,13 @@ class RegController extends Controller
             ];
         }
         return json_encode($response);
+    }
+
+    //列表
+    public function lis()
+    {
+        $res=DB::table('lis')->get();
+        echo json_encode($res,JSON_UNESCAPED_UNICODE);
     }
 }
 ?>
