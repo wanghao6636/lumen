@@ -47,4 +47,5 @@ $router->post('login','Reg\RegController@login');
 
 
 $router->post('lis','Reg\RegController@lis');
+$router->post('goodlist','Reg\RegController@goodlist');
 

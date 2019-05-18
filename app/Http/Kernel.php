@@ -70,6 +70,6 @@ class Kernel extends HttpKernel
         'check.login.token' => checkLoginToken::class,
         'check.logins.token'=>checkLoginsToken::class,
         'res.end'       => endTest::class,
-        'RegMiddleware'=>RegMiddleware::class
+//        'RegMiddleware'=>RegMiddleware::class
     ];
 }

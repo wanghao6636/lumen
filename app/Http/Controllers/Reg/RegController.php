@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redis;
 use App\Model\RegModel;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 class RegController extends Controller
 {
     //注册
@@ -135,8 +136,18 @@ class RegController extends Controller
     //列表
     public function lis()
     {
+        header("Access-Control-Allow-Origin: *");
         $res=DB::table('lis')->get();
         echo json_encode($res,JSON_UNESCAPED_UNICODE);
+    }
+
+    public function goodlist(Request $request)
+    {
+        header("Access-Control-Allow-Origin: *");
+//        $id=$request->input('id');
+        //echo $id;
+
+
     }
 }
 ?>
